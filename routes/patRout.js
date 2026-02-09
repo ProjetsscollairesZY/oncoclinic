@@ -1,6 +1,6 @@
 import express from 'express';
 import {patientLogin,patientProfile}  from '../controllers/patientCtrl.js'; 
-import authPatient from "../middlewares/authPatient.js";
+import authPatient from "../middlewares/authpatient.js";
 
 const patRout = express.Router();
 patRout.get("/profile", authPatient, patientProfile);
