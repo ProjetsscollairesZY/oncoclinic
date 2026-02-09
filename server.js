@@ -14,6 +14,10 @@ import sadmRout from './routes/SadmRout.js';
 const app = express();
 const port = process.env.PORT || 4000;
 
+app.listen(port, '0.0.0.0', () => {
+  console.log(`🚀 Serveur lancé sur le port ${port}`);
+});
+
 // Connexions bdd et api
 connectDB();
 connectCloudinary();
