@@ -13,13 +13,13 @@ const connectDB = async () => {
             serverSelectionTimeoutMS: 5000 // Timeout après 5 secondes
         });
 
-        console.log("✅ Connecté à MongoDB - Base:", mongoose.connection.db.databaseName);
+        console.log("Connecté à MongoDB - Base:", mongoose.connection.db.databaseName);
 
         const collections = await mongoose.connection.db.listCollections({ name: 'doctors' }).toArray();
 
         if (collections.length === 0) {
             await mongoose.connection.db.createCollection('doctors');
-            console.log("✅ Collection 'doctors' créée");
+            console.log(" Collection 'doctors' créée");
         }
     } catch (error) {
         console.error("❌ Échec de connexion MongoDB:", error.message);
